@@ -1,3 +1,53 @@
 .list-group-item {
   line-height: 2.5;
 }
+.jumbotron {
+  background-size: cover; 
+  height: 100%;
+  background-repeat: no-repeat;
+  padding: 0px;
+  background-color: black;
+  align-content: center;
+}
+
+body {
+  background-color: rgb(145, 143, 143);
+}
+
+.navbar-dark .navbar-toggler {
+  border: none;
+}
+
+.navbar-dark .navbar-toggler:focus {
+  outline: none;
+}
+ .bg-dark {
+   background-color: rgb(4, 4, 58) !important;
+ }
+
+.login-name {
+  color: rgba(255,255,255,.5);
+  display: block;
+  padding: .5rem 1rem;
+}
+
+form {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .login-name {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .login-name {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+

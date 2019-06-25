@@ -88,6 +88,60 @@ db.sequelize.sync(syncOptions).then(function() {
   }).then(function (db) {
     // console.log(db);
   });
+
+  db.Bracket.create({
+    bracket_name: "test1",
+    teamNames: [
+      ["Team 1", "Team 2"],
+      ["Team 3", null],
+      ["Team 4", null],
+      ["Team 5", null]
+    ],
+    results: [
+      [[1, 0], [null, null], [null, null], [null, null]],
+      [[null, null], [1, 4]],
+      [[null, null], [null, null]]
+    ],
+    UserId: 1
+  }).then(function (db) {
+    // console.log(db);
+  });
+
+  db.Bracket.create({
+    bracket_name: "test2",
+    teamNames: [
+      ["Team 1", "Team 2"],
+      ["Team 3", null],
+      ["Team 4", null],
+      ["Team 5", null]
+    ],
+    results: [
+      [[1, 0], [null, null], [null, null], [null, null]],
+      [[null, null], [1, 4]],
+      [[null, null], [null, null]]
+    ],
+    UserId: 1
+  }).then(function (db) {
+    // console.log(db);
+  });
+
+  db.Bracket.create({
+    bracket_name: "test2",
+    teamNames: [
+      ["Team 1", "Team 2"],
+      ["Team 3", null],
+      ["Team 4", null],
+      ["Team 5", null]
+    ],
+    results: [
+      [[1, 0], [null, null], [null, null], [null, null]],
+      [[null, null], [1, 4]],
+      [[null, null], [null, null]]
+    ],
+    UserId: 1
+  }).then(function (db) {
+    // console.log(db);
+  });
 });
 
 module.exports = app;

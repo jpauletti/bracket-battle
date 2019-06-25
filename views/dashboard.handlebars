@@ -1,19 +1,14 @@
+<h1 class="text-center">{{username}}'s Brackets</h1>
 
-<p class="h3">{{username}}'s Brackets</p>
-
-
-<div class="col-4">
-    <ul>
-        {{#each brackets}}
-        <li>
-            <div class="card" style="width: 18rem">
-                <div class="card-body">
-                    <h5 class="card-title">{{this.dataValues.bracket_name}}</h5>
-                    <a href="/bracket/{{this.dataValues.id}}" class="card-link">Link</a>
-                </div>
+<div class="row mt-5">
+    {{#each brackets}}
+    <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title">{{this.dataValues.bracket_name}}</h5>
+                <a href="/bracket/{{this.dataValues.id}}" class="card-link">Link</a>
             </div>
-        </li>
-        {{/each}}
-    </ul>
+        </div>
+    </div>
+    {{/each}}
 </div>
-
