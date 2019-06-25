@@ -2,11 +2,13 @@
 /* eslint-disable prettier/prettier */
 var saveData = {
   teams: [
-      ["",""]
+      ["Atlanta Thrashers","Tampa Bay Lightning"],
+      ["Dallas Stars", "Nashville Preditors"]
     ],
   results: [
     [
-      []
+      [3, 4],
+      [4, 2]
     ]
   ]
 };
@@ -27,3 +29,5 @@ $(function() {
   var data = container.bracket("data");
   $("#dataOutput").text(jQuery.toJSON(data));
 });
+
+export {function, saveFn, saveData};

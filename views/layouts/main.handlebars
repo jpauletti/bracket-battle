@@ -4,53 +4,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/19cb2d60da.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../../public/js/bracket.js"></script>
   <title>Bracket Battle</title>
 </head>
 
 <body>
-  {{!-- will hard code HTML here --}}
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-        <img id="logo" src="" alt="Bracket Battle">
-      </a>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><a class="navbar-brand" href="/">
+      <i class="fas fa-trophy"></i> Bracket Battle
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        {{#if loggedin}}
+        <li class="nav-item active">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        {{/if}}
+        <li class="nav-item active">
+          <a class="nav-link" href="/create">Create a Bracket</a>
+        </li>
+        {{#unless loggedin}}
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/unless}}
+        {{#if loggedin}}
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Hi, {{username}}</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {{/if}}
+        
+      </ul>
       
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          {{#if loggedin}}
-          <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
-          </li>
-          {{/if}}
-          <li class="nav-item">
-            <a class="nav-link" href="/create">Create a Bracket</a>
-          </li>
-          {{#unless loggedin}}
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          {{/unless}}
-          {{#if loggedin}}
-          <li class="nav-item">
-            <a class="nav-link" href="#">Hi, {{username}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-          </li>
-          {{/if}}
-
-        </ul>
-      </div>
     </div>
   </nav>
 
   <div class="container">
     {{{body}}}
   </div>
+
+  <div class="container">
+    {{{saveData}}}
+  </div>
+
+  
 </body>
 
 </html>

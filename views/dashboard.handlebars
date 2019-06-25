@@ -1,6 +1,19 @@
-<h1>User's Dashboard</h1>
 
-<p>{{loggedin}}</p>
-<p>{{username}}</p>
-<p>{{userId}}</p>
-<p>{{brackets}}</p>
+<p class="h3">{{username}}'s Brackets</p>
+
+
+<div class="col-4">
+    <ul>
+        {{#each brackets}}
+        <li>
+            <div class="card" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.dataValues.bracket_name}}</h5>
+                    <a href="/bracket/{{this.dataValues.id}}" class="card-link">Link</a>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+

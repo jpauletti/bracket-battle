@@ -1,52 +1,51 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <script src="https://kit.fontawesome.com/19cb2d60da.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body> --}}
-    <!-- navBar -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="#"> <i class="fas fa-home"></i>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Dashboard
-            </a>
-            <a class="navbar-item">
-              Create Bracket
-            </a>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Login / Sign up</strong>
-                </a>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <!-- Form -->
+<h1 class="mt-5 text-center">Create a Bracket</h1>
 
-    <div class="control">
-    <h1>Name : </h1>
-    <input class="input" type="text" placeholder="Name">
-    </div>
-    <h1>Teams:</h1> 
-    <textarea class="textarea" placeholder="(Separate teams using a comma.)" rows="10"></textarea>
+<form>
+  <div class="form-group">
+    <label for="bracket-name">Bracket Name</label>
+    <input type="text" class="form-control" id="bracket-name" placeholder="Enter Bracket Name">
+  </div>
+  
+  <div class="form-group">
+    <label for="teams">Teams</label>
+    <textarea class="form-control" id="teams" rows="3" placeholder="[Separate teams using a comma]"></textarea>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" id="createBracket" class="btn btn-primary">Submit</button>
+  </div>
+</form>
 
 
-{{!-- </body>
-</html> --}}
+
+<script>
+  $("#createBracket").on("click", function(event) {
+    event.preventDefault();
+
+    var name = $("#bracket-name").val().trim();
+    var teams = $("#teams").val().trim();
+    // separate teams into an array
+    var teamsArray = teams.split(",");
+
+    // id of user that's logged in
+    var userId = {{userId}};
+
+    // create object of new bracket
+    var newBracket = {
+      bracket_name: name,
+      teamNames: [
+        ["Team 1", "Team 2"],
+        ["Team 3", null],
+        ["Team 4", null],
+        ["Team 5", null]
+      ],
+      results: [
+        [[1, 0], [null, null], [null, null], [null, null]],
+        [[null, null], [1, 4]],
+        [[null, null], [null, null]]
+      ],
+      UserId: userId
+    };
+
+  })
+</script>
