@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "cz75coldwar",
+    "password": null,
     "database": "bracketBattle_db",
     "host": "localhost",
     "dialect": "mysql"
